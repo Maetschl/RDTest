@@ -19,6 +19,10 @@
 		7181E92F214D7300005F56EE /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E929214D7300005F56EE /* HomeModels.swift */; };
 		7181E930214D7300005F56EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E92A214D7300005F56EE /* HomeViewController.swift */; };
 		7181E931214D7300005F56EE /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E92B214D7300005F56EE /* HomeInteractor.swift */; };
+		7181E937214D754E005F56EE /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E933214D754E005F56EE /* HomeViewControllerTests.swift */; };
+		7181E938214D754E005F56EE /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E934214D754E005F56EE /* HomeInteractorTests.swift */; };
+		7181E939214D754E005F56EE /* HomeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E935214D754E005F56EE /* HomeWorkerTests.swift */; };
+		7181E93A214D754E005F56EE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E936214D754E005F56EE /* HomePresenterTests.swift */; };
 		79106EBEA61DB55CA07E17B1 /* Pods_ReignDesignTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C31825A3D54CCEB4E7A0B6 /* Pods_ReignDesignTestApp.framework */; };
 		9BB44246CDF3CF66D149BA86 /* Pods_ReignDesignTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBE24C9E748129230B0395 /* Pods_ReignDesignTestAppUITests.framework */; };
 		BA2C0DB8C99BC4E63AEBBC94 /* Pods_ReignDesignTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB34B305E8BE357BA2DE1E /* Pods_ReignDesignTestAppTests.framework */; };
@@ -63,6 +67,10 @@
 		7181E929214D7300005F56EE /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		7181E92A214D7300005F56EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7181E92B214D7300005F56EE /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		7181E933214D754E005F56EE /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		7181E934214D754E005F56EE /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		7181E935214D754E005F56EE /* HomeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerTests.swift; sourceTree = "<group>"; };
+		7181E936214D754E005F56EE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		B5824BA0CC69B64BF8250677 /* Pods-ReignDesignTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppUITests/Pods-ReignDesignTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B726F45053B751A466DA0E9F /* Pods-ReignDesignTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppTests/Pods-ReignDesignTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D211CCF7C830B7272023DE6E /* Pods-ReignDesignTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestApp/Pods-ReignDesignTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +136,7 @@
 				7181E8F5214BCCC1005F56EE /* AppDelegate.swift */,
 				7181E8FC214BCCC3005F56EE /* Assets.xcassets */,
 				7181E901214BCCC3005F56EE /* Info.plist */,
-				7181E923214D7158005F56EE /* Scenes */,
+				7181E923214D7158005F56EE /* HomeScene */,
 			);
 			path = ReignDesignTestApp;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 		7181E909214BCCC3005F56EE /* ReignDesignTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				7181E932214D750B005F56EE /* HomeScene */,
 				7181E90A214BCCC3005F56EE /* ReignDesignTestAppTests.swift */,
 				7181E90C214BCCC3005F56EE /* Info.plist */,
 			);
@@ -151,7 +160,7 @@
 			path = ReignDesignTestAppUITests;
 			sourceTree = "<group>";
 		};
-		7181E923214D7158005F56EE /* Scenes */ = {
+		7181E923214D7158005F56EE /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
 				7181E926214D7300005F56EE /* HomePresenter.swift */,
@@ -161,7 +170,7 @@
 				7181E92A214D7300005F56EE /* HomeViewController.swift */,
 				7181E92B214D7300005F56EE /* HomeInteractor.swift */,
 			);
-			path = Scenes;
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 		7181E924214D7186005F56EE /* Storyboards */ = {
@@ -171,6 +180,17 @@
 				7181E8FE214BCCC3005F56EE /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7181E932214D750B005F56EE /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				7181E933214D754E005F56EE /* HomeViewControllerTests.swift */,
+				7181E934214D754E005F56EE /* HomeInteractorTests.swift */,
+				7181E935214D754E005F56EE /* HomeWorkerTests.swift */,
+				7181E936214D754E005F56EE /* HomePresenterTests.swift */,
+			);
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 		E7C24835E3B22B29FBD75833 /* Frameworks */ = {
@@ -420,7 +440,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7181E938214D754E005F56EE /* HomeInteractorTests.swift in Sources */,
 				7181E90B214BCCC3005F56EE /* ReignDesignTestAppTests.swift in Sources */,
+				7181E939214D754E005F56EE /* HomeWorkerTests.swift in Sources */,
+				7181E93A214D754E005F56EE /* HomePresenterTests.swift in Sources */,
+				7181E937214D754E005F56EE /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
