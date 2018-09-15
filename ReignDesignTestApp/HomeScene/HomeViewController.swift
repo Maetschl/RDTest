@@ -63,16 +63,18 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl?.addTarget(self, action: #selector(callInteractor), for: .valueChanged)
         callInteractor()
     }
 
     // MARK: Do something
 
-    func callInteractor() {
+    @objc func callInteractor() {
         interactor?.getNews()
     }
 
     func displayNews(viewModel: Home.NewsList.ViewModel) {
+        refreshControl?.endRefreshing()
         news = viewModel.news
         tableView.reloadData()
     }

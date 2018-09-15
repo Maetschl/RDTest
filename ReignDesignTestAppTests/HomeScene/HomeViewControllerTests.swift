@@ -17,6 +17,7 @@ class HomeViewControllerTests: XCTestCase {
     // MARK: Subject under test
     var sut: HomeViewController!
     var window: UIWindow!
+    let TEST_STRING = "Test string"
 
     // MARK: Test lifecycle
 
@@ -55,16 +56,26 @@ class HomeViewControllerTests: XCTestCase {
 
     // MARK: Tests
 
-//    func testShouldDoSomethingWhenViewIsLoaded() {
-//        // Given
-//        let spy = HomeBusinessLogicSpy()
-//        sut.interactor = spy
-//
-//        // When
-//        loadView()
-//
-//        // Then
-//        XCTAssertTrue(spy.getNewsWasCalled, "func getNews was called from view life cycle")
-//    }
+    func testDisplayOneNews() {
+        // Given
+        let newDisplayedData = Home.NewsList.ViewModel.NewsDisplayedData(title: TEST_STRING, info: TEST_STRING)
+        let viewModel = Home.NewsList.ViewModel(news: [newDisplayedData])
 
+        // When
+        sut.displayNews(viewModel: viewModel)
+
+        // Then
+        XCTAssertEqual(1, sut.news.count, "News are 1")
+    }
+
+    func testDisplayNewsEmpty() {
+        // Given
+        let viewModel = Home.NewsList.ViewModel(news: [])
+
+        // When
+        sut.displayNews(viewModel: viewModel)
+
+        // Then
+        XCTAssertEqual(0, sut.news.count, "News are 0")
+    }
 }

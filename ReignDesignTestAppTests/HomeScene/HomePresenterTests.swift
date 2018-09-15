@@ -35,19 +35,9 @@ class HomePresenterTests: XCTestCase {
         sut = HomePresenter()
     }
 
-    // MARK: Test doubles
-
-    class HomeDisplayLogicSpy: HomeDisplayLogic {
-        var displaySomethingCalled = false
-
-        func displayNews(viewModel: Home.NewsList.ViewModel) {
-            displaySomethingCalled = true
-        }
-    }
-
     // MARK: Tests
 
-    func testPresentSomething() {
+    func testPresentNewsCallDisplayNews() {
         // Given
         let spy = HomeDisplayLogicSpy()
         sut.viewController = spy
@@ -57,6 +47,20 @@ class HomePresenterTests: XCTestCase {
         sut.presentNews(response: response)
 
         // Then
-        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
+        XCTAssertTrue(spy.displayNewsWasCalled, "presentSomething(response:) should ask the view controller to display the result")
+    }
+
+    func testPresentNewsWithOneNewCallDisplayNews() {
+        // Given
+        let spy = HomeDisplayLogicSpy()
+        sut.viewController = spy
+        let news = News(title: "TestTitle", author: "TestAutohr", date: "TestDate")
+        let response = Home.NewsList.Response(news: [news])
+
+        // When
+        sut.presentNews(response: response)
+
+        // Then
+        XCTAssertTrue(spy.displayNewsWasCalled, "presentSomething(response:) should ask the view controller to display the result")
     }
 }

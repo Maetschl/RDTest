@@ -17,7 +17,7 @@ protocol HomePresentationLogic {
 class HomePresenter: HomePresentationLogic {
     weak var viewController: HomeDisplayLogic?
 
-    // MARK: Do something
+    // MARK: Present news
 
     func presentNews(response: Home.NewsList.Response) {
         var displayedNews: [Home.NewsList.ViewModel.NewsDisplayedData] = []
