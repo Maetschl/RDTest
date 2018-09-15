@@ -29,11 +29,36 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     func getNews() {
         worker?.getDataFromApi(success: { (hackerNewsSearchResult) in
             self.data = hackerNewsSearchResult.hits
-            let responseFromApi = Home.NewsList.Response(news: [News(title: "Test", author: "Test", date: "test")])
+            var newsDataToPresent: [News] = []
+            if let data = self.data {
+                for news in data {
+                    let title = news.storyTitle ?? news.title ?? ""
+                    let author = news.author
+                    let date = news.createdAt
+                    let newNews = News(title: title, author: author, date: date)
+                    newsDataToPresent.append(newNews)
+                }
+                self.storeData(news: newsDataToPresent)
+            } else {
+                self.presentStoreData()
+            }
+            let responseFromApi = Home.NewsList.Response(news: newsDataToPresent)
             self.presenter?.presentNews(response: responseFromApi)
         }, error: {
-            let responseFromSaveData = Home.NewsList.Response(news: [])
-            self.presenter?.presentNews(response: responseFromSaveData)
+            self.presentStoreData()
         })
+    }
+
+    private func storeData(news data: [News]) {
+        let encondedData = NSKeyedArchiver.archivedData(withRootObject: data)
+        UserDefaults.standard.set(encondedData, forKey: Configurations.storeKey)
+        UserDefaults.standard.synchronize()
+    }
+
+    private func presentStoreData() {
+        let decodedData  = UserDefaults.standard.object(forKey: Configurations.storeKey) as! Data
+        let news = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [News]
+        let responseFromSaveData = Home.NewsList.Response(news: news)
+        self.presenter?.presentNews(response: responseFromSaveData)
     }
 }

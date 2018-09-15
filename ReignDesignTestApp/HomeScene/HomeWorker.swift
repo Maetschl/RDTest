@@ -18,10 +18,14 @@ protocol HomeWorkerProtocol {
 class HomeWorker: HomeWorkerProtocol {
     func getDataFromApi(success: @escaping ((HackerNewsSearchResult)-> Void),
                         error: @escaping (()-> Void)) {
-        Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=ios").responseJSON { (responseData) in
+        Alamofire.request(Configurations.urlPath).responseJSON { (responseData) in
             if responseData.data != nil {
-                let hackerNewsSearchResult = try? JSONDecoder().decode(HackerNewsSearchResult.self, from: responseData.data!)
-                success(hackerNewsSearchResult!)
+                if responseData.response != nil {
+                    let hackerNewsSearchResult = try? JSONDecoder().decode(HackerNewsSearchResult.self, from: responseData.data!)
+                    success(hackerNewsSearchResult!)
+                } else {
+                    error()
+                }
             } else {
                 error()
             }
