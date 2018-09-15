@@ -78,4 +78,20 @@ class HomeViewControllerTests: XCTestCase {
         // Then
         XCTAssertEqual(0, sut.news.count, "News are 0")
     }
+
+    // MARK: Test cell
+
+    func testCellDisplay() {
+        // Given
+        let newsArraw = [Home.NewsList.ViewModel.NewsDisplayedData(title: TEST_STRING, info: TEST_STRING)]
+        let viewModel = Home.NewsList.ViewModel(news: newsArraw)
+
+        // When
+        sut.news = viewModel.news
+        let cell = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 0))
+
+        // Then
+        XCTAssertEqual(cell.detailTextLabel?.text, TEST_STRING)
+        XCTAssertEqual(cell.textLabel?.text, TEST_STRING)
+    }
 }
