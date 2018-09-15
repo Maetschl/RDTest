@@ -19,6 +19,11 @@ enum Home {
             var news: [News]
         }
         struct ViewModel {
+            struct NewsDisplayedData {
+                var title: String
+                var info: String
+            }
+            var news: [NewsDisplayedData]
         }
     }
 }

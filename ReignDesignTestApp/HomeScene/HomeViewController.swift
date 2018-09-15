@@ -11,12 +11,15 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displaySomething(viewModel: Home.NewsList.ViewModel)
+    func displayNews(viewModel: Home.NewsList.ViewModel)
 }
 
 class HomeViewController: UITableViewController, HomeDisplayLogic {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+
+    // tableView datasource
+    var news: [Home.NewsList.ViewModel.NewsDisplayedData] = []
 
     // MARK: Object lifecycle
 
@@ -65,13 +68,33 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
 
     // MARK: Do something
 
-    //@IBOutlet weak var nameTextField: UITextField!
-
     func callInteractor() {
         interactor?.getNews()
     }
 
-    func displaySomething(viewModel: Home.NewsList.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displayNews(viewModel: Home.NewsList.ViewModel) {
+        news = viewModel.news
+        tableView.reloadData()
+    }
+
+    // MARK: TableView Controls
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = news[indexPath.row].title
+        cell.textLabel?.numberOfLines = 2
+        cell.detailTextLabel?.text = news[indexPath.row].info
+        return cell
+    }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return news.count
     }
 }

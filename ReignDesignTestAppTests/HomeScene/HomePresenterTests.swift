@@ -40,7 +40,7 @@ class HomePresenterTests: XCTestCase {
     class HomeDisplayLogicSpy: HomeDisplayLogic {
         var displaySomethingCalled = false
 
-        func displaySomething(viewModel: Home.NewsList.ViewModel) {
+        func displayNews(viewModel: Home.NewsList.ViewModel) {
             displaySomethingCalled = true
         }
     }

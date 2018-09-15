@@ -28,7 +28,7 @@ struct Hit: Codable {
     let url: String?
     let author: String
     let points: Int?
-    let storyText: JSONNull?
+    let storyText: String?
     let commentText: String?
     let numComments, storyID: Int?
     let storyTitle: String?

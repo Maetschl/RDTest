@@ -20,7 +20,14 @@ class HomePresenter: HomePresentationLogic {
     // MARK: Do something
 
     func presentNews(response: Home.NewsList.Response) {
-        let viewModel = Home.NewsList.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+        var displayedNews: [Home.NewsList.ViewModel.NewsDisplayedData] = []
+        for item in response.news {
+            let title = item.title
+            let info = item.author + " - " + item.date
+            let newDisplayedNews = Home.NewsList.ViewModel.NewsDisplayedData(title: title, info: info)
+            displayedNews.append(newDisplayedNews)
+        }
+        let viewModel = Home.NewsList.ViewModel(news: displayedNews)
+        viewController?.displayNews(viewModel: viewModel)
     }
 }
