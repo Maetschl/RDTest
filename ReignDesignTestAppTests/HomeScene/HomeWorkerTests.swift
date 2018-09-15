@@ -43,7 +43,8 @@ class HomeWorkerTests: XCTestCase {
         // Given
 
         // When
-
+        sut.getDataFromApi()
         // Then
+        
     }
 }
