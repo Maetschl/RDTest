@@ -11,7 +11,7 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displaySomething(viewModel: Home.News.ViewModel)
+    func displaySomething(viewModel: Home.NewsList.ViewModel)
 }
 
 class HomeViewController: UITableViewController, HomeDisplayLogic {
@@ -71,7 +71,7 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
         interactor?.getNews()
     }
 
-    func displaySomething(viewModel: Home.News.ViewModel) {
+    func displaySomething(viewModel: Home.NewsList.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }

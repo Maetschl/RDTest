@@ -12,7 +12,7 @@ import Foundation
 class HomePresentationLogicSpy: HomePresentationLogic {
     var presentSomethingCalled = false
 
-    func presentSomething(response: Home.News.Response) {
+    func presentNews(response: Home.NewsList.Response) {
         presentSomethingCalled = true
     }
 }

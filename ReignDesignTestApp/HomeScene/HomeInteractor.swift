@@ -29,11 +29,11 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     func getNews() {
         worker?.getDataFromApi(success: { (hackerNewsSearchResult) in
             self.data = hackerNewsSearchResult.hits
-            let responseFromApi = Home.News.Response()
-            self.presenter?.presentSomething(response: responseFromApi)
+            let responseFromApi = Home.NewsList.Response(news: [])
+            self.presenter?.presentNews(response: responseFromApi)
         }, error: {
-            let responseFromSaveData = Home.News.Response()
-            self.presenter?.presentSomething(response: responseFromSaveData)
+            let responseFromSaveData = Home.NewsList.Response(news: [])
+            self.presenter?.presentNews(response: responseFromSaveData)
         })
     }
 }

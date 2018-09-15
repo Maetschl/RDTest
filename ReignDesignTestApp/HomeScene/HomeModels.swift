@@ -12,10 +12,11 @@ import UIKit
 
 enum Home {
     // MARK: Get news
-    enum News {
+    enum NewsList {
         struct Request {
         }
         struct Response {
+            var news: [News]
         }
         struct ViewModel {
         }
