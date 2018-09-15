@@ -39,28 +39,45 @@ class HomeInteractorTests: XCTestCase {
         sut.presenter = presenter
     }
 
-    // MARK: Test doubles
-
-    class HomePresentationLogicSpy: HomePresentationLogic {
-        var presentSomethingCalled = false
-
-        func presentSomething(response: Home.News.Response) {
-            presentSomethingCalled = true
-        }
-    }
-
     // MARK: Tests
 
     func testGetNewsCallApiWorkerGetData() {
         // Given
         let spy = HomePresentationLogicSpy()
         sut.presenter = spy
-        let request = Home.News.Request()
 
         // When
         sut.getNews()
 
         // Then
         XCTAssertTrue(worker.getDataFromApiWasCalled, "getDataFromApi was called from interactor getNews")
+    }
+
+    func testGetNewsCallPresentNewsWenWorkerSuccess() {
+        // Given
+        let spy = HomePresentationLogicSpy()
+        sut.presenter = spy
+        worker.getDataFromApiShouldReturnError = false
+
+        // When
+        sut.getNews()
+
+        // Then
+        XCTAssertTrue(worker.getDataFromApiWasCalled, "getDataFromApi was called from interactor getNews")
+        XCTAssertTrue(spy.presentSomethingCalled, "PresentNews was called")
+    }
+
+    func testGetNewsCallPresentNewsWenWorkerFail() {
+        // Given
+        let spy = HomePresentationLogicSpy()
+        sut.presenter = spy
+        worker.getDataFromApiShouldReturnError = true
+
+        // When
+        sut.getNews()
+
+        // Then
+        XCTAssertTrue(worker.getDataFromApiWasCalled, "getDataFromApi was called from interactor getNews")
+        XCTAssertTrue(spy.presentSomethingCalled, "PresentNews was called")
     }
 }

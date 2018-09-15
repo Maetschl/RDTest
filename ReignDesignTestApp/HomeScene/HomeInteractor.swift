@@ -35,8 +35,5 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             let responseFromSaveData = Home.News.Response()
             self.presenter?.presentSomething(response: responseFromSaveData)
         })
-
-        let response = Home.News.Response()
-        presenter?.presentSomething(response: response)
     }
 }

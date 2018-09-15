@@ -25,6 +25,7 @@
 		7181E93A214D754E005F56EE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E936214D754E005F56EE /* HomePresenterTests.swift */; };
 		7181E93D214D7F8F005F56EE /* HackerNewsSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E93C214D7F8F005F56EE /* HackerNewsSearchResult.swift */; };
 		7181E93F214D8ACE005F56EE /* HomeWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E93E214D8ACE005F56EE /* HomeWorkerSpy.swift */; };
+		7181E942214D98C8005F56EE /* HomePresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E941214D98C8005F56EE /* HomePresentationLogicSpy.swift */; };
 		79106EBEA61DB55CA07E17B1 /* Pods_ReignDesignTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C31825A3D54CCEB4E7A0B6 /* Pods_ReignDesignTestApp.framework */; };
 		9BB44246CDF3CF66D149BA86 /* Pods_ReignDesignTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBE24C9E748129230B0395 /* Pods_ReignDesignTestAppUITests.framework */; };
 		BA2C0DB8C99BC4E63AEBBC94 /* Pods_ReignDesignTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB34B305E8BE357BA2DE1E /* Pods_ReignDesignTestAppTests.framework */; };
@@ -75,6 +76,7 @@
 		7181E936214D754E005F56EE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		7181E93C214D7F8F005F56EE /* HackerNewsSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsSearchResult.swift; sourceTree = "<group>"; };
 		7181E93E214D8ACE005F56EE /* HomeWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkerSpy.swift; sourceTree = "<group>"; };
+		7181E941214D98C8005F56EE /* HomePresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresentationLogicSpy.swift; sourceTree = "<group>"; };
 		B5824BA0CC69B64BF8250677 /* Pods-ReignDesignTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppUITests/Pods-ReignDesignTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B726F45053B751A466DA0E9F /* Pods-ReignDesignTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppTests/Pods-ReignDesignTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D211CCF7C830B7272023DE6E /* Pods-ReignDesignTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestApp/Pods-ReignDesignTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7181E93E214D8ACE005F56EE /* HomeWorkerSpy.swift */,
+				7181E941214D98C8005F56EE /* HomePresentationLogicSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7181E942214D98C8005F56EE /* HomePresentationLogicSpy.swift in Sources */,
 				7181E938214D754E005F56EE /* HomeInteractorTests.swift in Sources */,
 				7181E93F214D8ACE005F56EE /* HomeWorkerSpy.swift in Sources */,
 				7181E90B214BCCC3005F56EE /* ReignDesignTestAppTests.swift in Sources */,
