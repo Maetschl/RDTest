@@ -40,7 +40,7 @@ class HomePresenterTests: XCTestCase {
     class HomeDisplayLogicSpy: HomeDisplayLogic {
         var displaySomethingCalled = false
 
-        func displaySomething(viewModel: Home.Something.ViewModel) {
+        func displaySomething(viewModel: Home.News.ViewModel) {
             displaySomethingCalled = true
         }
     }
@@ -51,7 +51,7 @@ class HomePresenterTests: XCTestCase {
         // Given
         let spy = HomeDisplayLogicSpy()
         sut.viewController = spy
-        let response = Home.Something.Response()
+        let response = Home.News.Response()
 
         // When
         sut.presentSomething(response: response)

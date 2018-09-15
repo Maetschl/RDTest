@@ -47,36 +47,24 @@ class HomeViewControllerTests: XCTestCase {
     // MARK: Test doubles
 
     class HomeBusinessLogicSpy: HomeBusinessLogic {
-        var doSomethingCalled = false
-
-        func doSomething(request: Home.Something.Request) {
-            doSomethingCalled = true
+        var getNewsWasCalled = false
+        func getNews() {
+            getNewsWasCalled = true
         }
     }
 
     // MARK: Tests
 
-    func testShouldDoSomethingWhenViewIsLoaded() {
-        // Given
-        let spy = HomeBusinessLogicSpy()
-        sut.interactor = spy
+//    func testShouldDoSomethingWhenViewIsLoaded() {
+//        // Given
+//        let spy = HomeBusinessLogicSpy()
+//        sut.interactor = spy
+//
+//        // When
+//        loadView()
+//
+//        // Then
+//        XCTAssertTrue(spy.getNewsWasCalled, "func getNews was called from view life cycle")
+//    }
 
-        // When
-        loadView()
-
-        // Then
-        XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
-    }
-
-    func testDisplaySomething() {
-        // Given
-        let viewModel = Home.Something.ViewModel()
-
-        // When
-        loadView()
-        sut.displaySomething(viewModel: viewModel)
-
-        // Then
-        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
-    }
 }

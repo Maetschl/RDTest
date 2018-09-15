@@ -11,25 +11,32 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func doSomething(request: Home.Something.Request)
+    func getNews()
 }
 
 protocol HomeDataStore {
-    //var name: String { get set }
+    var data: [Hit]? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
-    //var name: String = ""
+    var worker: HomeWorkerProtocol? = HomeWorker()
+
+    // MARK: HomeDataStore
+    var data: [Hit]?
 
     // MARK: Do something
+    func getNews() {
+        worker?.getDataFromApi(success: { (hackerNewsSearchResult) in
+            self.data = hackerNewsSearchResult.hits
+            let responseFromApi = Home.News.Response()
+            self.presenter?.presentSomething(response: responseFromApi)
+        }, error: {
+            let responseFromSaveData = Home.News.Response()
+            self.presenter?.presentSomething(response: responseFromSaveData)
+        })
 
-    func doSomething(request: Home.Something.Request) {
-        worker = HomeWorker()
-        worker?.getDataFromApi()
-
-        let response = Home.Something.Response()
+        let response = Home.News.Response()
         presenter?.presentSomething(response: response)
     }
 }

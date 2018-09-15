@@ -11,9 +11,8 @@
 import UIKit
 
 enum Home {
-    // MARK: Use cases
-
-    enum Something {
+    // MARK: Get news
+    enum News {
         struct Request {
         }
         struct Response {

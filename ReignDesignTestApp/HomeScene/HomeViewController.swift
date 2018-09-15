@@ -11,7 +11,7 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displaySomething(viewModel: Home.Something.ViewModel)
+    func displaySomething(viewModel: Home.News.ViewModel)
 }
 
 class HomeViewController: UITableViewController, HomeDisplayLogic {
@@ -60,19 +60,18 @@ class HomeViewController: UITableViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        callInteractor()
     }
 
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
 
-    func doSomething() {
-        let request = Home.Something.Request()
-        interactor?.doSomething(request: request)
+    func callInteractor() {
+        interactor?.getNews()
     }
 
-    func displaySomething(viewModel: Home.Something.ViewModel) {
+    func displaySomething(viewModel: Home.News.ViewModel) {
         //nameTextField.text = viewModel.name
     }
 }
