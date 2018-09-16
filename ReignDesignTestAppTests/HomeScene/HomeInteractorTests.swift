@@ -18,6 +18,8 @@ class HomeInteractorTests: XCTestCase {
     var worker: HomeWorkerSpy!
     var presenter: HomePresentationLogicSpy!
 
+    let TEST_STRING = "Test String"
+
     // MARK: Test lifecycle
 
     override func setUp() {
@@ -39,7 +41,7 @@ class HomeInteractorTests: XCTestCase {
         sut.presenter = presenter
     }
 
-    // MARK: Tests
+    // MARK: Tests get data
 
     func testGetNewsCallApiWorkerGetData() {
         // Given
@@ -79,5 +81,38 @@ class HomeInteractorTests: XCTestCase {
         // Then
         XCTAssertTrue(worker.getDataFromApiWasCalled, "getDataFromApi was called from interactor getNews")
         XCTAssertTrue(spy.presentSomethingCalled, "PresentNews was called")
+    }
+
+    // MARK: Test remove data
+    func testRemoveData() {
+        // Given
+        let spy = HomePresentationLogicSpy()
+        sut.presenter = spy
+        sut.data = [News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING),
+                    News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING),
+                    News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING)]
+        let removeRequest = Home.RemoveNews.Request(row: 0)
+
+        // When
+        sut.deleteNews(request: removeRequest)
+
+        // Then
+        XCTAssertEqual(2, sut.data.count, "2 News in dataStore")
+        XCTAssertTrue(spy.presentSomethingCalled, "Present data was called")
+    }
+
+    func testRemoveUniqueData() {
+        // Given
+        let spy = HomePresentationLogicSpy()
+        sut.presenter = spy
+        sut.data = [News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING)]
+        let removeRequest = Home.RemoveNews.Request(row: 0)
+
+        // When
+        sut.deleteNews(request: removeRequest)
+
+        // Then
+        XCTAssertEqual(0, sut.data.count, "Nothing in dataStore")
+        XCTAssertTrue(spy.presentSomethingCalled, "Present data was called")
     }
 }

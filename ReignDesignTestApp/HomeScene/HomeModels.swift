@@ -13,8 +13,7 @@ import UIKit
 enum Home {
     // MARK: Get news
     enum NewsList {
-        struct Request {
-        }
+        struct Request {}
         struct Response {
             var news: [News]
         }
@@ -24,6 +23,12 @@ enum Home {
                 var info: String
             }
             var news: [NewsDisplayedData]
+        }
+    }
+    // MARK: Remove news
+    enum RemoveNews {
+        struct Request {
+            var row: Int
         }
     }
 }
