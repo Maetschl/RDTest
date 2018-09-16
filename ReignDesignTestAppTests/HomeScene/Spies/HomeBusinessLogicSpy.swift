@@ -10,6 +10,12 @@
 import Foundation
 
 class HomeBusinessLogicSpy: HomeBusinessLogic {
+
+    var selectNewsWasCalled = false
+    func selectNews(request: Home.SelectNews.Request) {
+        selectNewsWasCalled = true
+    }
+
     var deleteNewsWasCalled = false
     func deleteNews(request: Home.RemoveNews.Request) {
         deleteNewsWasCalled = true

@@ -17,7 +17,7 @@ class HomePresenterTests: XCTestCase {
     // MARK: Subject under test
 
     var sut: HomePresenter!
-
+    let TEST_STRING = "Test string"
     // MARK: Test lifecycle
 
     override func setUp() {
@@ -54,7 +54,7 @@ class HomePresenterTests: XCTestCase {
         // Given
         let spy = HomeDisplayLogicSpy()
         sut.viewController = spy
-        let news = News(title: "TestTitle", author: "TestAutohr", date: "TestDate")
+        let news = News(id: TEST_STRING, title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: TEST_STRING)
         let response = Home.NewsList.Response(news: [news])
 
         // When

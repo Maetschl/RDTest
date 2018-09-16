@@ -86,12 +86,13 @@ class HomeInteractorTests: XCTestCase {
     // MARK: Test remove data
     func testRemoveData() {
         // Given
+
         let spy = HomePresentationLogicSpy()
         sut.presenter = spy
-        sut.data = [News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING),
-                    News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING),
-                    News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING)]
-        let removeRequest = Home.RemoveNews.Request(row: 0)
+        sut.data = [News(id: "1", title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: TEST_STRING),
+                    News(id: "2", title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: TEST_STRING),
+                    News(id: "3", title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: TEST_STRING)]
+        let removeRequest = Home.RemoveNews.Request(index: 0)
 
         // When
         sut.deleteNews(request: removeRequest)
@@ -105,8 +106,8 @@ class HomeInteractorTests: XCTestCase {
         // Given
         let spy = HomePresentationLogicSpy()
         sut.presenter = spy
-        sut.data = [News(title: TEST_STRING, author: TEST_STRING, date: TEST_STRING)]
-        let removeRequest = Home.RemoveNews.Request(row: 0)
+        sut.data = [News(id: TEST_STRING, title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: TEST_STRING)]
+        let removeRequest = Home.RemoveNews.Request(index: 0)
 
         // When
         sut.deleteNews(request: removeRequest)
@@ -114,5 +115,18 @@ class HomeInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(0, sut.data.count, "Nothing in dataStore")
         XCTAssertTrue(spy.presentSomethingCalled, "Present data was called")
+    }
+
+    // MARK: Select news test
+    func testSelectNewsAtIndesZero() {
+        // Given
+        sut.data = [News(id: "999", title: TEST_STRING, author: TEST_STRING, date: TEST_STRING, url: Configurations.baseUrl)]
+        let selectRequest = Home.SelectNews.Request(index: 0)
+
+        // When
+        sut.selectNews(request: selectRequest)
+
+        // Then
+        XCTAssertNotNil(sut.selectedNews)
     }
 }

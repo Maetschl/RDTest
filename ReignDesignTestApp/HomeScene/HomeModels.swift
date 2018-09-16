@@ -28,7 +28,13 @@ enum Home {
     // MARK: Remove news
     enum RemoveNews {
         struct Request {
-            var row: Int
+            var index: Int
+        }
+    }
+    // MARK: Select news
+    enum SelectNews {
+        struct Request {
+            var index: Int
         }
     }
 }

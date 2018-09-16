@@ -13,18 +13,24 @@ import UIKit
 protocol HomeBusinessLogic {
     func getNews()
     func deleteNews(request: Home.RemoveNews.Request)
+    func selectNews(request: Home.SelectNews.Request)
 }
 
 protocol HomeDataStore {
     var data: [News] { get set }
+    var removedData: [News] { get set }
+    var selectedNews: URL! { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
+
     var presenter: HomePresentationLogic?
     var worker: HomeWorkerProtocol? = HomeWorker()
 
     // MARK: HomeDataStore
     var data: [News] = []
+    var removedData: [News] = []
+    var selectedNews: URL!
 
     // MARK: Get news
     func getNews() {
@@ -33,10 +39,12 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             var newsDataToPresent: [News] = []
 
             for news in result {
+                let id = news.objectID
                 let title = news.storyTitle ?? news.title ?? ""
                 let author = news.author
                 let date = news.createdAt
-                let newNews = News(title: title, author: author, date: date)
+                let url = news.storyURL ?? Configurations.baseUrl
+                let newNews = News(id: id,title: title, author: author, date: date, url: url)
                 newsDataToPresent.append(newNews)
             }
 
@@ -50,13 +58,21 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
 
     // MARK: Remove news
     func deleteNews(request: Home.RemoveNews.Request) {
-        data.remove(at: request.row)
+        removedData.append(data[request.index])
+        data.remove(at: request.index)
+        storeData(news: data)
         presentData()
+    }
+
+    // MARK: Select news
+    func selectNews(request: Home.SelectNews.Request) {
+        selectedNews = URL(string: data[request.index].url)
     }
 
     // MARK: Private store methods
     private func storeData(news data: [News]) {
         self.data = data
+        self.data = filteredData()
         let encondedData = NSKeyedArchiver.archivedData(withRootObject: data)
         UserDefaults.standard.set(encondedData, forKey: Configurations.storeKey)
         UserDefaults.standard.synchronize()
@@ -71,7 +87,22 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     private func presentStoreData() {
         let decodedData  = UserDefaults.standard.object(forKey: Configurations.storeKey) as! Data
         let news = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as! [News]
-        let responseFromSaveData = Home.NewsList.Response(news: news)
+        self.data = news
+        let responseFromSaveData = Home.NewsList.Response(news: data)
         self.presenter?.presentNews(response: responseFromSaveData)
+    }
+
+    // MARK: Filter deleted data
+    private func filteredData() -> [News] {
+        let filteredNews = data.filter { (news) -> Bool in
+            return notDeleted(news: news)
+        }
+        return filteredNews
+    }
+    private func notDeleted(news: News) -> Bool {
+        for removedItem in removedData {
+            if removedItem.id == news.id { return false }
+        }
+        return true
     }
 }
