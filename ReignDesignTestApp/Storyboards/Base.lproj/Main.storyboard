@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,10 +53,58 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IP5-5p-s1t">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <segue destination="BJ6-hL-58h" kind="show" identifier="segue" id="QLl-YY-iCg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsQ-I1-qJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-37" y="223"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="sGK-XP-tfQ">
+            <objects>
+                <viewController restorationIdentifier="DetailViewController" storyboardIdentifier="DetailViewController" id="BJ6-hL-58h" customClass="DetailViewController" customModule="ReignDesignTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="97T-E3-QQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHD-P0-uyT">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W07-SH-cFL">
+                                <rect key="frame" x="16" y="20" width="59" height="30"/>
+                                <state key="normal" title="👈 Back"/>
+                                <connections>
+                                    <action selector="back:" destination="BJ6-hL-58h" eventType="touchUpInside" id="pCk-LQ-eLs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W07-SH-cFL" firstAttribute="top" secondItem="PhY-KB-pZx" secondAttribute="top" id="5wQ-78-GEI"/>
+                            <constraint firstItem="PhY-KB-pZx" firstAttribute="trailing" secondItem="KHD-P0-uyT" secondAttribute="trailing" id="Edf-7o-GLM"/>
+                            <constraint firstItem="W07-SH-cFL" firstAttribute="leading" secondItem="PhY-KB-pZx" secondAttribute="leading" constant="16" id="Ibo-aI-oPB"/>
+                            <constraint firstItem="KHD-P0-uyT" firstAttribute="top" secondItem="W07-SH-cFL" secondAttribute="bottom" id="UPQ-hV-dxQ"/>
+                            <constraint firstItem="KHD-P0-uyT" firstAttribute="leading" secondItem="PhY-KB-pZx" secondAttribute="leading" id="UkM-dY-gu3"/>
+                            <constraint firstItem="KHD-P0-uyT" firstAttribute="bottom" secondItem="PhY-KB-pZx" secondAttribute="bottom" id="a6T-cH-NMu"/>
+                            <constraint firstItem="KHD-P0-uyT" firstAttribute="top" secondItem="W07-SH-cFL" secondAttribute="bottom" id="maC-hT-HID"/>
+                            <constraint firstItem="PhY-KB-pZx" firstAttribute="bottom" secondItem="KHD-P0-uyT" secondAttribute="bottom" id="zCH-do-Xax"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PhY-KB-pZx"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="KHD-P0-uyT" id="ZeC-xh-MBz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHu-Za-D4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.79999999999995" y="222.63868065967017"/>
         </scene>
     </scenes>
 </document>

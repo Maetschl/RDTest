@@ -11,4 +11,5 @@ import Foundation
 struct Configurations {
     static let urlPath = "https://hn.algolia.com/api/v1/search_by_date?query=ios"
     static let storeKey = "LastSearchResultNews"
+    static let baseUrl = "https://www.reigndesign.com/es/"
 }

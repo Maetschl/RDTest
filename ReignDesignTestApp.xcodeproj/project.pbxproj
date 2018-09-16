@@ -30,6 +30,15 @@
 		7181E946214DB041005F56EE /* HomeDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E945214DB041005F56EE /* HomeDisplayLogicSpy.swift */; };
 		7181E948214DCAC9005F56EE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E947214DCAC9005F56EE /* Configuration.swift */; };
 		7181E94A214DD6F2005F56EE /* HomeBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E949214DD6F2005F56EE /* HomeBusinessLogicSpy.swift */; };
+		7181E952214DDA9B005F56EE /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E94C214DDA9B005F56EE /* DetailPresenter.swift */; };
+		7181E955214DDA9B005F56EE /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E94F214DDA9B005F56EE /* DetailModels.swift */; };
+		7181E956214DDA9B005F56EE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E950214DDA9B005F56EE /* DetailViewController.swift */; };
+		7181E957214DDA9B005F56EE /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E951214DDA9B005F56EE /* DetailInteractor.swift */; };
+		7181E959214DDE68005F56EE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7181E958214DDE68005F56EE /* WebKit.framework */; };
+		7181E95B214DFA4B005F56EE /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E95A214DFA4B005F56EE /* DetailRouter.swift */; };
+		7181E962214E0C2D005F56EE /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E95E214E0C2D005F56EE /* DetailViewControllerTests.swift */; };
+		7181E963214E0C2D005F56EE /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E95F214E0C2D005F56EE /* DetailInteractorTests.swift */; };
+		7181E965214E0C2D005F56EE /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7181E961214E0C2D005F56EE /* DetailPresenterTests.swift */; };
 		79106EBEA61DB55CA07E17B1 /* Pods_ReignDesignTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C31825A3D54CCEB4E7A0B6 /* Pods_ReignDesignTestApp.framework */; };
 		9BB44246CDF3CF66D149BA86 /* Pods_ReignDesignTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBE24C9E748129230B0395 /* Pods_ReignDesignTestAppUITests.framework */; };
 		BA2C0DB8C99BC4E63AEBBC94 /* Pods_ReignDesignTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDB34B305E8BE357BA2DE1E /* Pods_ReignDesignTestAppTests.framework */; };
@@ -85,6 +94,15 @@
 		7181E945214DB041005F56EE /* HomeDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisplayLogicSpy.swift; sourceTree = "<group>"; };
 		7181E947214DCAC9005F56EE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7181E949214DD6F2005F56EE /* HomeBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		7181E94C214DDA9B005F56EE /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		7181E94F214DDA9B005F56EE /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		7181E950214DDA9B005F56EE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7181E951214DDA9B005F56EE /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		7181E958214DDE68005F56EE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7181E95A214DFA4B005F56EE /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		7181E95E214E0C2D005F56EE /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		7181E95F214E0C2D005F56EE /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		7181E961214E0C2D005F56EE /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		B5824BA0CC69B64BF8250677 /* Pods-ReignDesignTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppUITests/Pods-ReignDesignTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B726F45053B751A466DA0E9F /* Pods-ReignDesignTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestAppTests/Pods-ReignDesignTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D211CCF7C830B7272023DE6E /* Pods-ReignDesignTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReignDesignTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReignDesignTestApp/Pods-ReignDesignTestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7181E959214DDE68005F56EE /* WebKit.framework in Frameworks */,
 				79106EBEA61DB55CA07E17B1 /* Pods_ReignDesignTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				7181E8F4214BCCC1005F56EE /* ReignDesignTestApp */,
+				7181E8F5214BCCC1005F56EE /* AppDelegate.swift */,
+				7181E8FC214BCCC3005F56EE /* Assets.xcassets */,
+				7181E947214DCAC9005F56EE /* Configuration.swift */,
 				7181E909214BCCC3005F56EE /* ReignDesignTestAppTests */,
 				7181E914214BCCC3005F56EE /* ReignDesignTestAppUITests */,
 				7181E8F3214BCCC1005F56EE /* Products */,
@@ -146,13 +168,11 @@
 		7181E8F4214BCCC1005F56EE /* ReignDesignTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				7181E924214D7186005F56EE /* Storyboards */,
-				7181E8F5214BCCC1005F56EE /* AppDelegate.swift */,
-				7181E8FC214BCCC3005F56EE /* Assets.xcassets */,
 				7181E901214BCCC3005F56EE /* Info.plist */,
 				7181E923214D7158005F56EE /* HomeScene */,
-				7181E943214D9BE3005F56EE /* News.swift */,
-				7181E947214DCAC9005F56EE /* Configuration.swift */,
+				7181E94B214DDA70005F56EE /* DetailScene */,
+				7181E924214D7186005F56EE /* Storyboards */,
+				7181E966214E125C005F56EE /* Model */,
 			);
 			path = ReignDesignTestApp;
 			sourceTree = "<group>";
@@ -161,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				7181E932214D750B005F56EE /* HomeScene */,
+				7181E95D214E0C10005F56EE /* DetailScene */,
 				7181E90A214BCCC3005F56EE /* ReignDesignTestAppTests.swift */,
 				7181E90C214BCCC3005F56EE /* Info.plist */,
 			);
@@ -222,9 +243,40 @@
 			path = Spies;
 			sourceTree = "<group>";
 		};
+		7181E94B214DDA70005F56EE /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				7181E94C214DDA9B005F56EE /* DetailPresenter.swift */,
+				7181E95A214DFA4B005F56EE /* DetailRouter.swift */,
+				7181E94F214DDA9B005F56EE /* DetailModels.swift */,
+				7181E950214DDA9B005F56EE /* DetailViewController.swift */,
+				7181E951214DDA9B005F56EE /* DetailInteractor.swift */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		7181E95D214E0C10005F56EE /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				7181E95E214E0C2D005F56EE /* DetailViewControllerTests.swift */,
+				7181E95F214E0C2D005F56EE /* DetailInteractorTests.swift */,
+				7181E961214E0C2D005F56EE /* DetailPresenterTests.swift */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		7181E966214E125C005F56EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7181E943214D9BE3005F56EE /* News.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E7C24835E3B22B29FBD75833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7181E958214DDE68005F56EE /* WebKit.framework */,
 				F8C31825A3D54CCEB4E7A0B6 /* Pods_ReignDesignTestApp.framework */,
 				6EDB34B305E8BE357BA2DE1E /* Pods_ReignDesignTestAppTests.framework */,
 				43DBE24C9E748129230B0395 /* Pods_ReignDesignTestAppUITests.framework */,
@@ -456,15 +508,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7181E92C214D7300005F56EE /* HomePresenter.swift in Sources */,
+				7181E95B214DFA4B005F56EE /* DetailRouter.swift in Sources */,
 				7181E92D214D7300005F56EE /* HomeWorker.swift in Sources */,
+				7181E955214DDA9B005F56EE /* DetailModels.swift in Sources */,
 				7181E931214D7300005F56EE /* HomeInteractor.swift in Sources */,
 				7181E944214D9BE3005F56EE /* News.swift in Sources */,
+				7181E952214DDA9B005F56EE /* DetailPresenter.swift in Sources */,
 				7181E8F6214BCCC1005F56EE /* AppDelegate.swift in Sources */,
 				7181E92F214D7300005F56EE /* HomeModels.swift in Sources */,
 				7181E948214DCAC9005F56EE /* Configuration.swift in Sources */,
 				7181E930214D7300005F56EE /* HomeViewController.swift in Sources */,
 				7181E92E214D7300005F56EE /* HomeRouter.swift in Sources */,
+				7181E956214DDA9B005F56EE /* DetailViewController.swift in Sources */,
 				7181E93D214D7F8F005F56EE /* HackerNewsSearchResult.swift in Sources */,
+				7181E957214DDA9B005F56EE /* DetailInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7181E963214E0C2D005F56EE /* DetailInteractorTests.swift in Sources */,
 				7181E942214D98C8005F56EE /* HomePresentationLogicSpy.swift in Sources */,
+				7181E965214E0C2D005F56EE /* DetailPresenterTests.swift in Sources */,
+				7181E962214E0C2D005F56EE /* DetailViewControllerTests.swift in Sources */,
 				7181E938214D754E005F56EE /* HomeInteractorTests.swift in Sources */,
 				7181E93F214D8ACE005F56EE /* HomeWorkerSpy.swift in Sources */,
 				7181E90B214BCCC3005F56EE /* ReignDesignTestAppTests.swift in Sources */,
@@ -578,7 +638,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -632,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
