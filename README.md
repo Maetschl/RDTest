@@ -6,6 +6,6 @@ install cocoapods: (https://guides.cocoapods.org/using/getting-started.html)
 
 > sudo gem install cocoapods
 
-On folder of proyect execute:
+Then on folder of proyect execute:
 
 > pod install
